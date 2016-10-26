@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { Events, MenuController, Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar, Splashscreen, Flashlight } from 'ionic-native';
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -33,8 +33,7 @@ export class TricksAndTreatsApp {
   // the login page disables the left menu
   appPages: PageObj[] = [
     { title: 'Map', component: MapPage, icon: 'map' },
-    { title: 'Locations', component: LocationListPage, icon: 'pin' },
-    { title: 'Flashlight', component: LocationListPage, icon: 'flame' }
+    { title: 'Locations', component: LocationListPage, icon: 'pin' }
   ];
   loggedInPages: PageObj[] = [
     { title: 'Profile', component: AccountPage, icon: 'person' },
@@ -97,5 +96,9 @@ export class TricksAndTreatsApp {
   enableMenu(loggedIn) {
     this.menu.enable(loggedIn, 'loggedInMenu');
     this.menu.enable(!loggedIn, 'loggedOutMenu');
+  }
+
+  toggleFlashLight() {
+    Flashlight.toggle();
   }
 }

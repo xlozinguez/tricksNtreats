@@ -18,6 +18,11 @@ export class UserData {
     return this.auth.login('basic', user).then(() => {
       this.setUser(user);
       this.events.publish('user:login');
+    }, (err: IDetailedError<string[]>) => {
+      debugger;
+      for (let e of err.details) {
+        alert(e);
+      }
     });
   }
 

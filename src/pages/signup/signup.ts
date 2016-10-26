@@ -18,7 +18,7 @@ export class SignupPage {
   submitted = false
 
   constructor(
-    private nav: NavController,
+    public nav: NavController,
     public userData: UserData
   ) {}
 

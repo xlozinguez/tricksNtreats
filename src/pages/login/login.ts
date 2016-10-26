@@ -19,7 +19,7 @@ export class LoginPage {
   submitted = false
 
   constructor(
-    private nav: NavController,
+    public nav: NavController,
     public userData: UserData
   ) {}
 

@@ -22,6 +22,16 @@
 
     <ion-list>
       <ion-list-header>
+        Tools
+      </ion-list-header>
+      <button ion-item menuClose (click)="toggleFlashLight()">
+        <ion-icon item-left name="flame"></ion-icon>
+        Flashlight
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
         Account
       </ion-list-header>
       <button ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">
@@ -52,6 +62,16 @@
       <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon"></ion-icon>
         {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Tools
+      </ion-list-header>
+      <button ion-item menuClose (click)="toggleFlashLight()">
+        <ion-icon item-left name="flame"></ion-icon>
+        Flashlight
       </button>
     </ion-list>
 
