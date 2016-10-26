@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hunting Locations</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content location-list">
+  <ion-card *ngFor="let location of locations" class="location">
+
+    <ion-card-header>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="assets/icon/locations/{{location.iconPic}}.png">
+        </ion-avatar>
+        {{location.name}}
+        <button ion-button icon-only (click)="toggleFavorite(location)" clear item-right>
+          <ion-icon name="heart-outline"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="openLocation(location)" clear item-right>
+          <ion-icon name="navigate-outline"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-card-header>
+
+  </ion-card>
+</ion-content>
